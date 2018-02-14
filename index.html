@@ -15,21 +15,29 @@
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<h2>Контекст наложения</h2>
+		<h3> кто ты?</h3>
 		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover main" src="pictures/3-53.png" alt="контекст наложения">
 		</figure>
 		<style>
+			#cover img {
+				left: 10%;
+				top: 20%;
+				transform: scale(1.2);
+			}
 			#cover h2 {
 				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
+				color: #0a0b1b;
+				text-align:right;
 				font-size:70px;
 				}
+			#cover h3 {
+				margin:20px 0 0;
+				color: #0a0b1b;
+				text-align:right;
+				font-size:50px;
+			}
 			#cover p {
 				margin:10px 0 0;
 				text-align:center;
@@ -43,57 +51,289 @@
 		</style>
 	</section>
 
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+	<section class="slide about-me" id="about-me">
+		<img src="pictures/author.jpg" alt="фото докладчика ">
+		<div>
+			<h2>Влад Антипенко</h2>
+			<ol>
+				<li>Front End dev at SomeCompany</li>
+				<li>Co-founder KharkivFrontend Meetup</li>
+			</ol>
+		</div>
+		<style>
+			#about-me {
+				display: flex;
+			}
+			#about-me img{
+				height: 240px;
+				width: 240px;
+				object-fit: cover;
+				object-position: left;
+				margin-right: 50px;
+			}
+		</style>
+
 	</section>
 
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Serious citations</h2>
+	<section class="slide start">
 		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
+			<img class="cover main" src="pictures/8bitMario.png" alt="mario">
 		</figure>
+
+	</section>
+
+	<section class="slide start" id="mario-game">
+		<p class="">1981 год</p>
+		<style>
+			#mario-game{
+				background-image: url(pictures/mario.jpg);
+				background-size: cover;
+			}
+			p{
+				color: #fff;
+				text-shadow: 2px 0px 0px #000;
+				font-size: 30px;
+			}
+		</style>
+	</section>
+
+	<section class="slide start" id="doom">
+		<p>1993 год</p>
+		<style>
+			#doom{
+				background-image: url(pictures/doom.jpg);
+				background-size: cover;
+			}
+			#doom p{
+				color: #fff;
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="dekart">
+		<figure>
+			<img class=" main dekart-mario" src="pictures/8bitMario-alpha.png" alt="контекст наложения">
+		</figure>
+
+		<style>
+			#dekart{
+				background-image: url(pictures/xy.gif);
+				background-size: cover;
+				background-position-x: right ;
+				position: relative;
+			}
+			.dekart-mario{
+				position: absolute;
+				top: calc(50% - 120px);
+				left: calc(50% - 30px);
+				animation-duration: 8s;
+				animation-delay: 5s;
+				animation-name: mario;
+				animation-iteration-count: infinite;
+			}
+			@keyframes mario {
+				from{
+					transform: translate(0,0);
+				}
+				10% {
+					transform: translate(100px, 0);
+				}
+
+				25% {
+					transform: translate(100px, -100px);
+
+				}
+				50% {
+					transform: translate(100px, 150px);
+				}
+				70% {
+					transform: translate(-150px, 150px);
+				}
+				80% {
+					transform: translate(50px, 150px);
+				}
+				90% {
+					transform: translateX(50px, 50px);
+				}
+				to{
+					transform: translate(0, 0);
+				}
+			}
+
+		</style>
+	</section>
+
+	<section class="slide" id="xyz">
+		<figure>
+			<img src="pictures/earth.png" alt="Земля" class="earth">
+			<img src="pictures/moon.png" alt="Луна" class="moon">
+		</figure>
+		<img src="pictures/xyz.png" class="koordinateXYZ" alt="">
+		<style>
+			#xyz{
+				padding-left: 80px;
+			}
+			.koordinateXYZ{
+				position: absolute;
+				top: 100px;
+			}
+			#xyz figure{
+			font: 1em sans-serif;
+			background: url(pictures/cosmos.jpg);
+			background-size: cover;
+				height: 60vh;
+				opacity: .8;
+			}
+
+			.earth{
+				width: 400px;
+				padding: 100px;
+				position: relative;
+				z-index: 1;
+			}
+
+			.moon{
+				position: absolute;
+				top: 170px;
+				left: 200px;
+				-webkit-animation: linear 5s orbita infinite;
+				animation: linear 5s orbita infinite;
+				z-index: 0;
+			}
+
+			@-webkit-keyframes orbita{
+				0%{width: 72px;}
+				24%{z-index: 0;}
+				25%{left: 380px; top: 130px; z-index: 2;}
+				50%{width: 128px;}
+				74%{z-index: 2;}
+				75%{top: 300px; left: 40px; z-index: 0;}
+				100%{width: 72px; -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+			}
+			@keyframes orbita{
+				0%{width: 72px;}
+				24%{z-index: 0;}
+				25%{left: 380px; top: 130px; z-index: 2;}
+				50%{width: 128px;}
+				74%{z-index: 2;}
+				75%{top: 300px; left: 40px; z-index: 0;}
+				100%{width: 72px; -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+			}
+		</style>
 	</section>
 
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>Web</h2>
+		<div class="flex">
+			<div class="next html">
+				<h3>HTML</h3>
+				<time>1989 год</time>
+				<img src="pictures/firstPage.png" alt="первая веб страница">
+				<a href="http://info.cern.ch/hypertext/WWW/TheProject.html" class="link">http://info.cern.ch/hypertext/WWW/TheProject.html</a>
+			</div>
+			<div class="next css1">
+				<h3>CSS 1</h3>
+				<time>1996 год</time>
+				<video src="pictures/css-1.mp4" alt="первая веб страница" autoplay loop></video>
+			</div>
+
+			<div class="next css2">
+				<h3>CSS 2</h3>
+				<time>1998 год</time>
+				<video src="pictures/css-1.mp4" alt="первая веб страница" autoplay loop></video>
+			</div>
+
+		</div>
+		<style>
+			.flex{
+				display: flex;
+				justify-content: space-between;
+				flex-basis: 30%;
+			}
+			.flex img, .flex video{
+				max-width: 100%;
+				max-height: 300px;
+				border: 1px solid rgba(0,0,0, .4);
+			}
+			.html, .css1, .css2{
+				max-width: 25%;
+			}
+			.link{
+				font-size: .55rem;
+				word-wrap: break-word;
+			}
+
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>CSS 2</h2>
+		<ul>
+			<li class="next">Position</li>
+			<li class="next">Top/Right/Bottom/Left</li>
+			<li class="next">Z-Index</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Position</h2>
+
+		<figure class="demo-container">
+			<code>position:relative</code>
+			<div class="red"><code>position:static</code></div>
+			<div class="green">
+				<pre>
+					position:relative;
+					left:15px;
+				</pre>
+			</div>
+			<div class="fucksiya">
+				<pre>
+					position:absolute;
+					right:15px;
+					top:15px;
+				</pre>
+			</div>
+		</figure>
+		<style>
+			.demo-container{
+				position: relative;
+				border:1px solid #000;
+			}
+			.demo-container .red{
+				background: rgba(123, 44, 12, .6);
+				text-align: center;
+				height: 150px;
+				width: 30%;
+			}
+			.demo-container .green{
+				position: relative;
+				left: 20px;
+				text-align: center;
+				height: 50px;
+				width: 30%;
+				height: 150px;
+				background: #4baa4f;
+				background: rgba(75, 179, 79, .6);
+			}
+			.demo-container .fucksiya{
+				position:absolute;
+				right:15px;
+				top:15px;
+				background: rgba(191, 3, 187, 0.6);
+				text-align: center;
+				height: 150px;
+				width: 30%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">z-index</h2>
+	</section>
+	
+	<section class="slide">
+		<h2>CSS 2</h2>
 		<pre>
 			<code>&lt;!DOCTYPE html&gt;</code>
 			<code class="mark">&lt;html lang="en"&gt;</code>
