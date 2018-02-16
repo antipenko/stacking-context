@@ -89,7 +89,7 @@
 				background-image: url(pictures/mario.jpg);
 				background-size: cover;
 			}
-			p{
+			.start p{
 				color: #fff;
 				text-shadow: 2px 0px 0px #000;
 				font-size: 30px;
@@ -296,53 +296,65 @@
 
 	<section class="slide">
 		<h2>Position</h2>
-		// домик с марио
 		<figure class="demo-container">
-			<code>position:relative</code>
-			<div class="red"><code>position:static</code></div>
-			<div class="green">
-				<pre>
-					position:relative;
-					left:15px;
-				</pre>
+			<div class="tv">
+				<img src="pictures/pos1.png" alt="tv">
 			</div>
-			<div class="fucksiya">
-				<pre>
-					position:absolute;
-					right:15px;
-					top:15px;
-				</pre>
+			<div class="art">
+				<img src="pictures/art.jpg" alt="art">
+			</div>
+			<div class="table">
+				<img src="pictures/table.png" alt="table">
 			</div>
 		</figure>
 		<style>
 			.demo-container{
 				position: relative;
 				border:1px solid #000;
+				line-height: 1.4;
+				padding-bottom: 20px;
+				height: 400px;
 			}
-			.demo-container .red{
-				background: rgba(123, 44, 12, .6);
-				text-align: center;
-				height: 150px;
-				width: 30%;
+			.demo-container div{
+				width: 130px;
 			}
-			.demo-container .green{
+			.demo-container img{
+				max-width: 100%;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Position</h2>
+		<figure class="demo-container pos">
+			<div class="tv">
+				<img src="pictures/pos1.png" alt="tv">
+			</div>
+			<div class="art">
+				<img src="pictures/art.jpg" alt="art">
+			</div>
+			<div class="table">
+				<img src="pictures/table.png" alt="table">
+			</div>
+		</figure>
+		<style>
+			.demo-container.pos .tv{
 				position: relative;
-				left: 20px;
-				text-align: center;
-				height: 50px;
-				width: 30%;
-				height: 150px;
-				background: #4baa4f;
-				background: rgba(75, 179, 79, .6);
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%);
 			}
-			.demo-container .fucksiya{
+			.demo-container.pos .art{
 				position:absolute;
-				right:15px;
-				top:15px;
-				background: rgba(191, 3, 187, 0.6);
-				text-align: center;
-				height: 150px;
-				width: 30%;
+				left: 50%;
+				top:30px;
+				transform: translateX(-50%);
+
+			}
+			.demo-container.pos .table{
+				position: absolute;
+				bottom: 15px;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 		</style>
 	</section>
@@ -355,32 +367,367 @@
 		<h2 class="shout shrink">z-index</h2>
 	</section>
 
+	<section class="slide">
+		<h2>z-index</h2>
+		<figure class="demo-container pos">
+			<div class="tv zi">
+				<img src="pictures/pos1.png" alt="tv">
+			</div>
+			<div class="art">
+				<img src="pictures/art.jpg" alt="art">
+			</div>
+			<div class="table">
+				<img src="pictures/table.png" alt="table">
+			</div>
+		</figure>
+		<style>
+			.demo-container.pos .tv.zi{
+				z-index: 1;
+			}
+		</style>
+	</section>
 	// ок, но оказывается не все так просто (проблема с контекстом)
 	<section class="slide">
-		<h2 class="shout shrink">z-index простейший пример</h2>
-	</section>
-	<section class="slide">
-		<h2 class="shout shrink">z-index неочевидный пример пример</h2>
+		<h2>Position</h2>
+		<figure class="demo-container pos">
+			<div class="tv-container">
+				<div class="tv zi">
+					<img src="pictures/pos1.png" alt="tv">
+				</div>
+				<div class="table">
+					<img src="pictures/table.png" alt="table">
+				</div>
+			</div>
+			<div class="art zi">
+				<img src="pictures/art.jpg" alt="art">
+			</div>
+		</figure>
+		<style>
+			.demo-container .tv-container{
+				position: relative;
+				height: 160px;
+				left: 50%;
+				top: 45%;
+				transform:translate(-50%);
+			}
+			.demo-container .art.zi {
+				z-index: 1;
+			}
+			.demo-container .tv-container .tv{
+				top: 0;
+				z-index: 9;
+			}
+			.demo-container .tv-container .table{
+				bottom: 0;
+			}
+		</style>
 	</section>
 
 	// почему так, ну как обычно "недочитали"
 	<section class="slide">
-		<h2 class="shout shrink">скриншот забавного приложения</h2>
-		<p>которое никто не заметил - стэкинг контекст</p>
-	</section>
-
-	<section class="slide">
-		<h2 class="shout shrink">приехали :(</h2>
-		<p>грустно, не все так просто как казалось</p>
+		<h2 class="shrink">Недочитали</h2>
+		<figure>
+			<img src="pictures/appendix.png" alt="скриншот забавного приложения">
+		</figure>
 	</section>
 
 	// КН - это бла бла, влияет бла бла
 
 	<section class="slide">
-		<h2 class="shout shrink">контексст наложения это</h2>
+		<h2 class="">контекст наложения - </h2>
+		<blockquote>
+			<p>
+				это концепция трехмерного разположения HTML элементов вдоль оси Z , по отношению к пользователю, находящемуся перед экраном.
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Контекст наложения без z-index</h2>
+		<ol>
+			<li>Фон и границы корневого элемента</li>
+			<li>Не позиционированные блоки, в порядке появления в HTML</li>
+			<li>Позиционированные блоки, в порядке появления в HTML</li>
+		</ol>
 	</section>
 	<section class="slide">
-		<h2 class="shout shrink">на него влияет это</h2>
+		<h2 class="">Контекст наложения без z-index</h2>
+		<figure class="example">
+			<div id="abs1" class="absolute">
+				<b>DIV #1</b><br />position: absolute;</div>
+			<div id="rel1" class="relative">
+				<b>DIV #2</b><br />position: relative;</div>
+			<div id="rel2" class="relative">
+				<b>DIV #3</b><br />position: relative;</div>
+			<div id="abs2" class="absolute">
+				<b>DIV #4</b><br />position: absolute;</div>
+			<div id="sta1" class="static">
+				<b>DIV #5</b><br />position: static;</div>
+		</figure>
+		<style>
+			.example{
+				position: relative;
+				/*border: 1px solid #ababab;*/
+			}
+			.example b {
+				font-family: sans-serif;
+
+			}
+
+			.example div {
+				padding: 10px;
+				border: 1px dashed;
+				text-align: center;
+				font-size: .5em;
+				/*opacity: .7;*/
+			}
+
+			.example .static {
+				position: static;
+				height: 60px;
+				background-color: #ffc;
+				border-color: #996;
+			}
+
+			.example .absolute {
+				position: absolute;
+				width: 120px;
+				height: 320px;
+				background-color: #fdd;
+				border-color: #900;
+				opacity: 0.7;
+			}
+
+			.example .relative {
+				position: relative;
+				height: 100px;
+				background-color: #cfc;
+				border-color: #696;
+				opacity: 0.7;
+			}
+
+			.example #abs1 {
+				top: 10px;
+				left: 10px;
+			}
+
+			.example #rel1 {
+				top: 30px;
+				margin: 0px 50px 0px 50px;
+			}
+
+			.example #rel2 {
+				top: 15px;
+				left: 20px;
+				margin: 0px 50px 0px 50px;
+			}
+
+			.example #abs2 {
+				top: 10px;
+				right: 10px;
+			}
+
+			.example #sta1 {
+				background-color: #ffc;
+				height: 90px;
+				margin: 0px 50px 0px 50px;
+			}
+
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Контекст наложения c z-index</h2>
+		<ol>
+			<li>Не позиционированные элементы в порядке появления на странице</li>
+			<li>Позиционированные элементы в порядке увеличения z-index</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2 class="">Контекст наложения c z-index</h2>
+		<figure class="example zi">
+			<div id="abs1">
+				<b>DIV #1</b>
+				<br />position: absolute;
+				<br />z-index: 5;
+			</div>
+
+			<div id="rel1">
+				<b>DIV #2</b>
+				<br />position: relative;
+				<br />z-index: 3;
+			</div>
+
+			<div id="rel2">
+				<b>DIV #3</b>
+				<br />position: relative;
+				<br />z-index: 2;
+			</div>
+
+			<div id="abs2">
+				<b>DIV #4</b>
+				<br />position: absolute;
+				<br />z-index: 1;
+			</div>
+
+			<div id="sta1">
+				<b>DIV #5</b>
+				<br />no positioning
+				<br />z-index: 8;
+			</div>
+		</figure>
+		<style>
+			.example.zi #abs1 {
+				z-index: 5;
+				position: absolute;
+				width: 150px;
+				height: 350px;
+				top: 10px;
+				left: 10px;
+				border: 1px dashed #900;
+				background-color: #fdd;
+			}
+
+			.example.zi #rel1 {
+				z-index: 3;
+				height: 100px;
+				position: relative;
+				top: 30px;
+				border: 1px dashed #696;
+				background-color: #cfc;
+				margin: 0px 50px 0px 50px;
+			}
+
+			.example.zi #rel2 {
+				z-index: 2;
+				height: 100px;
+				position: relative;
+				top: 15px;
+				left: 20px;
+				border: 1px dashed #696;
+				background-color: #cfc;
+				margin: 0px 50px 0px 50px;
+			}
+
+			.example.zi #abs2 {
+				z-index: 1;
+				position: absolute;
+				width: 150px;
+				height: 350px;
+				top: 10px;
+				right: 10px;
+				border: 1px dashed #900;
+				background-color: #fdd;
+			}
+
+			.example.zi #sta1 {
+				z-index: 8;
+				height: 70px;
+				border: 1px dashed #996;
+				background-color: #ffc;
+				margin: 0px 50px 0px 50px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Контекст наложения и float</h2>
+		<ol>
+			<li>Фон и границы корневого элемента</li>
+			<li>Не позиционированные блоки, в порядке появления в HTML</li>
+			<li>Блоки с float, отличным от none</li>
+			<li>Позиционированные блоки, в порядке появления в HTML</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Контекст наложения и float</h2>
+		<figure class="example float">
+			<div id="abs1">
+				<b>DIV #1</b><br />position: absolute;</div>
+
+			<div id="flo1">
+				<b>DIV #2</b><br />float: left;</div>
+
+			<div id="flo2">
+				<b>DIV #3</b><br />float: right;</div>
+
+			<br />
+
+			<div id="sta1">
+				<b>DIV #4</b><br />no positioning</div>
+
+			<div id="abs2">
+				<b>DIV #5</b><br />position: absolute;</div>
+		</figure>
+		<style>
+			.example{
+				position: relative;
+				/*border: 1px solid #ababab;*/
+			}
+
+			.float.example #abs1 {
+				position: absolute;
+				width: 150px;
+				height: 200px;
+				top: 10px;
+				right: 140px;
+				left: auto;
+				border: 1px dashed #900;
+				background-color: #fdd;
+			}
+
+			.float.example #sta1 {
+				height: 100px;
+				border: 1px dashed #996;
+				background-color: #ffc;
+				margin: 0px 10px 0px 10px;
+				text-align: left;
+			}
+
+			.float.example #flo1 {
+				margin: 0px 10px 0px 20px;
+				float: left;
+				width: 150px;
+				height: 200px;
+				border: 1px dashed #090;
+				background-color: #cfc;
+			}
+
+			.float.example #flo2 {
+				margin: 0px 20px 0px 10px;
+				float: right;
+				width: 150px;
+				height: 200px;
+				border: 1px dashed #090;
+				background-color: #cfc;
+			}
+
+			.float.example #abs2 {
+				position: absolute;
+				width: 150px;
+				height: 100px;
+				top: 130px;
+				left: 100px;
+				border: 1px dashed #990;
+				background-color: #fdd;
+			}
+
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Формирование КН</h2>
+		<ul>
+			<li>является корневым элементом (HTML),</li>
+			<li>позиционирован абсолютно, фиксировано или относительно с z-index значением отличным от "auto"</li>
+			<li>flex элемент с z-index отличным от &nbsp;"auto"</li>
+			<li>элементы с  opacity меньше чем 1</li>
+			<li>элементы с  transform отличным от "none"</li>
+		</ul>
+		<p>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"> Более подробно тут</a>
+		</p>
 	</section>
 
 	<section class="slide">давайте пробовать, на примере с планетой</h2>
