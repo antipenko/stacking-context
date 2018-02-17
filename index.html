@@ -59,10 +59,11 @@
     <img src="pictures/author.jpg" alt="фото докладчика ">
     <div>
         <h2>Влад Антипенко</h2>
-        <ol>
-            <li>Front End dev at SomeCompany</li>
-            <li>Co-founder KharkivFrontend Meetup</li>
-        </ol>
+        <ul>
+            <li>Работаю: frontend dev</li>
+            <li>Учусь: НАУ ХАИ</li>
+            <li>Организовую: KharkivFrontend</li>
+        </ul>
     </div>
     <style>
         #about-me {
@@ -889,62 +890,6 @@
     </p>
 </section>
 
-<!--<section class="slide">-->
-    <!--<h2>Создание контекста</h2>-->
-    <!--<figure class="root">-->
-        <!--<span>root</span>-->
-        <!--<div class="next header">-->
-            <!--<span>header</span>-->
-            <!--<ul class="menu">-->
-                <!--<li>menu 1</li>-->
-                <!--<li>menu 2</li>-->
-                <!--<li>menu 3</li>-->
-                <!--<li>menu 4</li>-->
-                <!--<li>menu 5</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="next main">-->
-            <!--<span>main</span>-->
-        <!--</div>-->
-    <!--</figure>-->
-    <!--<style>-->
-        <!--.root{-->
-            <!--position: relative;-->
-            <!--border: 2px solid crimson;-->
-            <!--padding: 20px;-->
-            <!--height: 80%;-->
-        <!--}-->
-        <!--.root span{-->
-            <!--position: absolute;-->
-            <!--top: -25px;-->
-            <!--left: 5px;-->
-            <!--font-size: 14px;-->
-            <!--opacity: .8;-->
-        <!--}-->
-        <!--.header{-->
-            <!--position: relative;-->
-            <!--height: 50px;-->
-            <!--padding: 5px;-->
-            <!--border: 1px solid rebeccapurple;-->
-            <!--margin-bottom: 20px;-->
-        <!--}-->
-        <!--.header .menu{-->
-            <!--font-size: 14px;-->
-            <!--line-height: 1.2;-->
-            <!--list-style: none;-->
-        <!--}-->
-        <!--.header .menu li{ text-indent: 0;}-->
-        <!--.header .menu li:before{-->
-            <!--content: none;}-->
-        <!--.main{-->
-            <!--height: 50%;-->
-            <!--position: relative;-->
-            <!--border: 1px solid green;-->
-            <!--margin-bottom: 20px;-->
-        <!--}-->
-    <!--</style>-->
-<!--</section>-->
-
 <section class="slide">
     <h2>Ключ к пониманию</h2>
     <blockquote>
@@ -1039,8 +984,122 @@
     <h2 class="shout">Практика</h2>
 </section>
 
+<section class="slide">
+    <div class="content">
+        <pre class="code">
+            <code>.room {position:relative;}</code>
+            <code>  .tv-container{position:relative;</code>
+            <code>  transform: translate(-50%);}</code>
+			    <code>      .tv{position:relative;</code>
+                <code>          z-index:5</code>
+                <code>          transform: translate(-50%);}</code>
+			    <code>      .table{</code>
+                <code>          position:absolute;</code>
+                <code>          left: 50%; bottom: 30px;}</code>
+            <code>  .picture{</code>
+                <code>      position:absolute;</code>
+                <code>      left: 50%; top: 30px;}</code>
+		</pre>
+        <figure class="demo-container pos">
+            <div class="tv-container">
+                <div class="tv zi">
+                    <img src="pictures/pos1.png" alt="tv">
+                </div>
+                <div class="table">
+                    <img src="pictures/table.png" alt="table">
+                </div>
+            </div>
+            <div class="art">
+                <img src="pictures/art.jpg" alt="art">
+            </div>
+        </figure>
+    </div>
+    <style>
+        .demo-container.pos .tv {
+            position: relative;
+            left: 50%;
+            top: 0px;
+            z-index: 5;
+            transform: translateX(-50%);
+        }
+
+        .demo-container.pos .art {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+
+        }
+
+        .demo-container.pos .table {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <div class="content">
+        <pre class="code">
+            <code>.room {position:relative;}</code>
+            <code>  .tv-container{position:relative;</code>
+            <code>  transform: translate(-50%);}</code>
+			    <code>      .tv{position:relative;</code>
+                <code>          z-index:5</code>
+                <code>          <span class="comment">&lt;!--transform: translate(-50%);--&gt;</span>}</code>
+			    <code>      .table{</code>
+                <code>          position:absolute;</code>
+                <code>          left: 50%; bottom: 30px;}</code>
+            <code>  .picture{</code>
+                <code>      position:absolute;</code>
+                <code>      left: 50%; top: 30px;}</code>
+		</pre>
+        <figure class="demo-container pos stack">
+            <div class="tv-container">
+                <div class="tv zi">
+                    <img src="pictures/pos1.png" alt="tv">
+                </div>
+                <div class="table">
+                    <img src="pictures/table.png" alt="table">
+                </div>
+            </div>
+            <div class="art">
+                <img src="pictures/art.jpg" alt="art">
+            </div>
+        </figure>
+    </div>
+    <style>
+        .demo-container.pos .tv {
+            position: relative;
+            left: 50%;
+            top: 0px;
+            z-index: 5;
+            transform: translateX(-50%);
+        }
+        .demo-container.pos.stack .tv-container{
+            transform: none;
+        }
+        .demo-container.pos .art {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+
+        }
+
+        .demo-container.pos .table {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</section>
+
+
 <section class="slide zi-pract" id="zi-pract">
-    <!--<h2>z-index</h2>-->
     <figure>
         <img src="pictures/earth.png" alt="Земля" class="earth">
         <img src="pictures/moon.png" alt="Луна" class="moon">
@@ -1183,6 +1242,20 @@
             100%{width: 72px;top:220px; -webkit-transform: rotate(360deg); transform: rotate(360deg);}
         }
     </style>
+</section>
+<section class="slide">
+    <h2>Ссылки</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">The stacking context (MDN)</a></li>
+        <li><a href="https://www.w3.org/TR/css-position-3/#det-stacking-context">Detailed stacking context</a></li>
+        <li><a href="https://habrahabr.ru/post/166435/">То, что вам никто не говорил о z-index (Habr)</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_and_float">Stacking with floated blocks (MDN)</a></li>
+    </ul>
+    <p style="text-align:center"><a href="">Cсылка на презентацию</a></p>
+</section>
+<section class="slide">
+    <h2>Спасибо за внимание!</h2>
+    <h3>Вопросы/Ответы</h3>
 </section>
 <footer class="badge">
     <a href="https://github.com/shower/shower">Fork me on GitHub</a>
